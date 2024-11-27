@@ -1,11 +1,19 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Fragment } from "react";
+
+const MacbookScene = dynamic(() => import("@/components/models/macbook"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
     <Fragment>
+      <div className="min-h-72">
+        <MacbookScene></MacbookScene>
+      </div>
       <div className="flex flex-col justify-center items-center align-middle space-y-24 p-5 sm:p-0 min-h-[calc(100vh-40px-56px)]">
-        <div className="flex flex-col justify-center items-center align-middle sm:flex-row space-x-5 space-y-5 sm:space-y-0 mt-10 md:mt-48">
+        <div className="flex flex-col justify-center items-center align-middle sm:flex-row space-x-5 space-y-5 sm:space-y-0 mt-10 md:mt-36">
           <Image
             src="/me.jpg"
             alt="ollie_tan_avatar"
