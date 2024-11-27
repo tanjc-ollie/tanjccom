@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-gray-900 text-slate-200 text-lg">
+      <body className="antialiased bg-gray-900 text-slate-200 text-md font-medium leading-relaxed">
         <AppHeader></AppHeader>
         <main className="">{children}</main>
         <AppFooter></AppFooter>
