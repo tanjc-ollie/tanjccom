@@ -9,7 +9,7 @@ export default function ContactMe() {
       <div className="space-y-8">
         <div className="flex flex-row items-center align-middle space-x-2">
           <p>Contact me through </p>
-          <LinekdinContact rem={1}></LinekdinContact>
+          <LinekdinContact></LinekdinContact>
           <p> for quicker response.</p>
         </div>
         <div className="divider">

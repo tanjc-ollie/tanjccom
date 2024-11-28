@@ -7,7 +7,7 @@ export default function AppHeader() {
         <h1 className="text-2xl font-semibold italic">
           Ollie Tan | Senior Software Developer
         </h1>
-        <LinekdinContact rem={2}></LinekdinContact>
+        <LinekdinContact></LinekdinContact>
       </div>
     </header>
   );
