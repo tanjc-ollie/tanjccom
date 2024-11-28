@@ -6,7 +6,7 @@ export default function LinekdinContact() {
     <a
       href="https://www.linkedin.com/in/ollietan"
       target="_blank"
-      className="flex justify-center items-center align-middle"
+      className="inline-flex justify-center items-center align-middle"
     >
       <FontAwesomeIcon icon={faLinkedin} color="#0a66c2" size="xl" />
     </a>

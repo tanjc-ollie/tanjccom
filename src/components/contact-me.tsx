@@ -8,9 +8,8 @@ export default function ContactMe() {
       <h1 className="text-4xl font-semibold">Let's connect!</h1>
       <div className="space-y-8">
         <div className="flex flex-row items-center align-middle space-x-2">
-          <p>Contact me through </p>
+          <p>Connect through LinkedIn:</p>
           <LinekdinContact></LinekdinContact>
-          <p> for quicker response.</p>
         </div>
         <div className="divider">
           <span className="flex text-2xl font-semibold">Or</span>

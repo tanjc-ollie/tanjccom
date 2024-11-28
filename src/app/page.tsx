@@ -20,7 +20,7 @@ export default function Home() {
       <div className="flex flex-col justify-center my-8 md:my-22">
         <MacbookScene></MacbookScene>
         <span className="italic text-xs text-center">
-          (This is my new Macbook Air, cool huh? Try dragging it.)
+          (This is my new Macbook Air, cool huh? Try giving it a spin!)
         </span>
       </div>
       <div className="flex flex-col justify-center items-center align-middle space-y-10 md:space-y-12 p-5 sm:p-0 min-h-[calc(100vh-40px-56px)] mt-12">
