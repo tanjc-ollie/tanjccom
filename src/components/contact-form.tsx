@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, Fragment, useRef, useState } from "react";
+import { FormEvent, Fragment, useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
@@ -11,6 +11,21 @@ export default function ContactForm() {
   const [formError, setFormError] = useState("");
 
   const form = useRef();
+
+  useEffect(() => {
+    if (!!localStorage.getItem("SENT")) {
+      const last_sent: Date = new Date(
+        decodeHex(localStorage.getItem("SENT") as string)
+      );
+      const right_now: Date = new Date();
+      //@ts-ignore
+      const elapsed_minutes = (right_now - last_sent) / (60 * 1000);
+
+      if (elapsed_minutes < 5) {
+        setError("Please send another message after 5 minutes.");
+      }
+    }
+  }, []);
 
   const sendEmail = (e: FormEvent) => {
     e.preventDefault();
@@ -33,6 +48,10 @@ export default function ContactForm() {
       .then(
         () => {
           setSent(true);
+
+          // remember last sent date
+          const right_now = new Date().toString();
+          localStorage.setItem("SENT", encodeHex(right_now));
         },
         (err) => {
           setError(err.text);
@@ -80,4 +99,19 @@ export default function ContactForm() {
       </button>
     </form>
   );
+}
+
+function encodeHex(text: string): string {
+  return text
+    .split("")
+    .map((char) => char.charCodeAt(0).toString(16))
+    .join("");
+}
+
+function decodeHex(hex: string): string {
+  //@ts-ignore
+  return hex
+    .match(/.{1,2}/g)
+    .map((byte) => String.fromCharCode(parseInt(byte, 16)))
+    .join("");
 }
