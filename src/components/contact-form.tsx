@@ -94,9 +94,14 @@ export default function ContactForm() {
         onChange={(e) => setMessage(e.target.value)}
         className="block w-full rounded-md border-0 py-1.5 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 placeholder:text-xs focus:ring-2 focus:ring-inset focus:ring-slate-800 sm:text-sm/6 h-24"
       ></textarea>
-      <button type="submit" className="text-md font-bold">
-        Send message
-      </button>
+      <span className="italic text-xs text-right text-red-700 font-bold">
+        (Your IP address will be logged for regulatory compliance.)
+      </span>
+      <div className="flex justify-center">
+        <button type="submit" className="text-sm font-bold">
+          Send message
+        </button>
+      </div>
     </form>
   );
 }
