@@ -65,7 +65,7 @@ export default function MacbookModel({
         ref={modelRef}
         object={gltf.scene}
         scale={0.015}
-        position={[-0.65, -1.3, -3]}
+        position={[-0.65, -1.7, -3]}
       ></primitive>
     </group>
   );
