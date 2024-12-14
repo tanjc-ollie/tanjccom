@@ -2,6 +2,7 @@
 
 import { FormEvent, Fragment, useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -29,6 +30,8 @@ export default function ContactForm() {
 
   const sendEmail = (e: FormEvent) => {
     e.preventDefault();
+
+    sendGTMEvent({ event: "send_email_click", data: navigator.userAgent });
 
     if (!name.trim()) {
       setFormError("Name is required.");

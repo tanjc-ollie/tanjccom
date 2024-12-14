@@ -33,7 +33,6 @@ export default function MacbookModel({
   }, []);
 
   useEffect(() => {
-    console.log("Texture loaded");
     if (!screenTexture) {
       return;
     }
